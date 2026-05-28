@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "选中计字",
+  "version": "1.0",
+  "description": "选中文字后自动统计中文字数、英文单词数、标点符号数和总字符数",
+  "permissions": [],
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
