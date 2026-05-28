@@ -8,7 +8,7 @@
   };
 
   let lang = 'zh';
-  chrome.storage.sync.get('lang', data => { lang = data.lang || navigator.language.startsWith('en') ? 'en' : 'zh'; });
+  chrome.storage.sync.get('lang', data => { lang = data.lang || (navigator.language.startsWith('en') ? 'en' : 'zh'); });
 
   const popup = document.createElement('div');
   popup.id = '_wc_popup';
@@ -27,19 +27,19 @@
 
   function count(text) {
     const raw = text;
-    const totalNoSpace = raw.replace(/\s/g, '').length;
     const chinese = (raw.match(/[\u4e00-\u9fff]/g) || []).length;
     const engLetters = (raw.match(/[a-zA-Z]/g) || []).length;
     const engWords = (raw.match(/[a-zA-Z]+/g) || []).length;
     const punct = raw.replace(/[\u4e00-\u9fff]/g,'').replace(/[a-zA-Z]/g,'').replace(/[0-9]/g,'').replace(/\s/g,'').length;
-    const l = (chinese >= engLetters) ? lang : 'en';
+    const total = chinese + engWords + punct;
     const t = (chinese >= engLetters) ? L[lang] : L.en;
+    
     const lines = [];
     if (chinese > 0) lines.push(`<div><span style="color:#888;">${t.cn}</span> ${chinese}</div>`);
     if (engWords > 0) lines.push(`<div><span style="color:#888;">${t.en}</span> ${engWords}</div>`);
     if (punct > 0) lines.push(`<div><span style="color:#888;">${t.punct}</span> ${punct}</div>`);
     lines.push(`<hr style="margin:4px 0;border:none;border-top:1px solid #eee;">`);
-    lines.push(`<div><span style="color:#888;">${t.total}</span> ${totalNoSpace}</div>`);
+    lines.push(`<div><span style="color:#888;">${t.total}</span> ${total}</div>`);
     return lines.join('\n');
   }
 
