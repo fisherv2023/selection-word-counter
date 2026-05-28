@@ -3,6 +3,8 @@
 选中网页文字后自动弹出字数统计。  
 Show character/word count instantly when selecting text on any webpage.
 
+![Screenshot](screenshot.png)
+
 适用于内容创作者、翻译、编辑等需要频繁核对字数的场景。  
 For content creators, translators, editors who need quick character counts.
 
@@ -42,5 +44,6 @@ selection-word-counter/
 ├── icon16.png        # 图标
 ├── icon48.png
 ├── icon128.png
+├── screenshot.png    # 截图
 └── README.md
 ```
