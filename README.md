@@ -17,8 +17,10 @@ Or download ZIP from GitHub, extract, go to `chrome://extensions` → Developer 
 
 ## 语言切换 / Language
 
-右击扩展图标 → 选项 → 选择 中文 / English  
-Right-click extension icon → Options → Choose language.
+右击 Chrome 右上角扩展栏的选中计字图标 → **选项** → 选择 中文 / English。  
+Right-click the extension icon in Chrome toolbar → **Options** → Choose language.
+
+刷新页面后生效。Reload the page after changing.
 
 ## 功能 / Features
 
@@ -26,7 +28,7 @@ Right-click extension icon → Options → Choose language.
 - 中文字数统计 / Chinese character count
 - 英文单词数统计 / Word count
 - 标点符号数统计 / Punctuation count
-- 总计字符数（不含空格）/ Total characters (excluding spaces)
+- 总计（中文 + 英文词 + 标点）/ Total (Chinese + words + punctuation)
 - 浅色弹窗，点击任意位置关闭 / Light popup, click anywhere to dismiss
 
 ## 文件结构 / File Structure
